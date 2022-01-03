@@ -12,7 +12,7 @@ import styles from "../../styles/Home.module.css";
 
 export default function TautoAbout({ about }) {
   return (
-    <Layout title={"Tauto"}>
+    <Layout title={"Origami"}>
       <div className={styles.aboutContainer}>
         <div className={styles.background}>
           <Image
