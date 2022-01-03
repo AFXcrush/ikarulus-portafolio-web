@@ -1,0 +1,256 @@
+@use "../variables/color" as c;
+@use "../variables/size" as s;
+@use "../variables/font" as f;
+@use "../variables/globalStyles" as gs;
+@use "../variables/breakpoints" as bk;
+
+.galleryPage {
+  @include gs.backgroundFixed;
+
+  background-color: c.$black;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0px;
+  grid-auto-rows: 1fr;
+  padding: s.space(s6);
+
+  @include bk.tablet {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include bk.movil {
+    grid-template-columns: repeat(3, 1fr);
+    padding: s.space(s4);
+  }
+
+  @include bk.small {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bk.xsmall {
+    grid-template-columns: 1fr;
+    padding: s.space(s2);
+  }
+}
+
+.galleryEntry {
+  position: relative;
+  text-align: center;
+}
+
+.galleryThumbnailContainer {
+  width: 100%;
+  position: relative;
+}
+
+.galleryThumbnail {
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.6s ease;
+    opacity: 0.5;
+  }
+}
+
+.galleryTitle {
+  color: c.$sec;
+  position: absolute;
+  bottom: s.space(s2);
+  left: 50%;
+  transform: translate(-50%, -30%);
+  text-shadow: 1px 1px 1px black, 0 0 1em black, 0 0 0.2em black;
+  cursor: pointer;
+  font-size: s.size(medium);
+  font-weight: f.weight(mainBold);
+
+  @include bk.movil {
+    font-size: s.size(normal);
+  }
+}
+
+.bigCenterTitle {
+  @include f.bigTitle;
+  text-align: center;
+  margin: s.space(s6) auto;
+  color: c.$main;
+}
+
+.galleryButtons {
+  width: 100%;
+  margin: s.space(s5) auto;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: s.space(s5);
+  border-bottom: 1px solid c.$main;
+
+  @include bk.movil {
+    width: 80%;
+  }
+
+  button {
+    background: none;
+    color: c.$main;
+    font-size: s.size(medium);
+    padding: s.space(s4) 200px;
+    background: rgba(c.$main, 0.2);
+    border: 1px solid c.$main;
+    border-radius: s.space(s3);
+    cursor: pointer;
+
+    @include bk.wide {
+      padding: s.space(s4) 150px;
+    }
+
+    @include bk.tablet {
+      padding: s.space(s4) 100px;
+    }
+
+    @include bk.movil {
+      padding: s.space(s3) 60px;
+    }
+
+    @include bk.small {
+      font-size: s.size(normal);
+      padding: s.space(s2) 40px;
+      border-radius: s.space(s2);
+    }
+
+    @include bk.xsmall {
+      padding: s.space(s2) 20px;
+    }
+
+    &:hover {
+      color: c.$sec;
+      border: 1px solid c.$highlight;
+      transition: 0.3s;
+    }
+  }
+}
+
+.modalContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(c.$black, 0.9);
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.modalContentContainer {
+  overflow: auto;
+  padding: s.space(s6);
+  background-color: c.$dark;
+  height: 100vh;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include bk.wide {
+    width: 70%;
+  }
+
+  @include bk.tablet {
+    width: 75%;
+    padding: s.space(s3);
+  }
+
+  @include bk.movil {
+    width: 90%;
+    padding: s.space(s2) s.space(s1);
+  }
+}
+
+.modalContent {
+  width: 90%;
+  color: c.$sec;
+  font-family: f.$sec;
+
+  @include bk.tablet {
+    width: 100%;
+  }
+
+  p,
+  img,
+  iframe,
+  .txtHyperContainer,
+  .txtHLContainer {
+    @include gs.contentMargin;
+  }
+
+  p {
+    @include gs.parrafoLineHeight;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  iframe {
+    margin-bottom: s.space(s5);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  a {
+    font-size: s.size(medium);
+    color: c.$link;
+  }
+
+  h3 {
+    color: c.$highlight;
+    font-weight: f.weight(mainBold);
+  }
+}
+
+.txtHyperContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  svg {
+    display: block;
+    height: s.size(medium);
+    fill: c.$link;
+    margin-right: s.space(s2);
+  }
+}
+
+.txtHLContainer {
+  @extend .txtHyperContainer;
+  align-items: center;
+
+  svg {
+    fill: c.$highlight;
+    height: s.size(big);
+  }
+}
+
+.closeBtn {
+  display: block;
+  width: 32px;
+  height: auto;
+  fill: c.$sec;
+  position: fixed;
+  top: 64px;
+  right: 64px;
+  cursor: pointer;
+
+  @include bk.movil {
+    top: 32px;
+    right: 32px;
+  }
+
+  @include bk.small {
+    width: 24px;
+  }
+}

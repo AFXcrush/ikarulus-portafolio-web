@@ -1,0 +1,30 @@
+//TAMAÑOS
+$size: (
+  xsmall: 0.5rem,
+  small: 0.8rem,
+  normal: 1rem,
+  medium: 1.3rem,
+  big: 2rem,
+  bigger: 3rem,
+  biggest: 4rem,
+);
+
+@function size($s) {
+  @return map-get($size, $s);
+}
+
+//ESPACIOS
+$space: (
+  s1: 0.3rem,
+  s2: 0.5rem,
+  s3: 1rem,
+  s4: 1.5rem,
+  s5: 2rem,
+  s6: 3rem,
+  s7: 6.25rem,
+  s8: 9.375rem,
+);
+
+@function space($s) {
+  @return map-get($space, $s);
+}

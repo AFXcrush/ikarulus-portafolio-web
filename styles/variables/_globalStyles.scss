@@ -1,0 +1,39 @@
+@use "./size" as s;
+@use "./breakpoints" as bk;
+
+@mixin contentMargin {
+  margin-bottom: s.space(s5);
+}
+@mixin parrafoLineHeight {
+  line-height: s.size(medium);
+}
+
+@mixin backgroundFixed {
+  width: 100%;
+  height: 100vh;
+  // background-position: center top;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  overflow: auto;
+}
+
+.ignoreThisEmptySpaceThankYou {
+  width: 100%;
+  height: s.space(s6);
+  visibility: hidden;
+
+  @include bk.small {
+    height: s.space(s3);
+  }
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.content {
+  z-index: 1;
+}

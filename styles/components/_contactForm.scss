@@ -1,0 +1,65 @@
+@use "../variables/color" as c;
+@use "../variables/size" as s;
+@use "../variables/font" as f;
+@use "../variables/globalStyles" as gs;
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: s.space(s6) 0;
+
+  h1 {
+    @include gs.contentMargin;
+    text-align: center;
+  }
+}
+
+.form {
+  width: 100%;
+  padding: s.space(s3);
+  border-radius: s.space(s3);
+  background: rgba(c.$acent-blue, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    background-color: c.$sec;
+    border: none;
+    border-radius: s.space(s2);
+    padding: s.space(s2) s.space(s5);
+    cursor: pointer;
+    font-family: f.$main;
+    font-weight: f.weight(mainBold);
+
+    &:hover {
+      background-color: c.$acent-blue;
+      color: c.$sec;
+      transition: 0.3s;
+    }
+  }
+}
+
+.formContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  input,
+  textarea {
+    width: 100%;
+    font-family: f.$main;
+    border: none;
+    margin-bottom: s.space(s2);
+    padding: s.space(s2);
+    border-radius: s.space(s2);
+  }
+
+  label {
+    color: c.$sec;
+    margin-bottom: s.space(s2);
+  }
+}

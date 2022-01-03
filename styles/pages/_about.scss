@@ -1,0 +1,99 @@
+@use "../variables/color" as c;
+@use "../variables/size" as s;
+@use "../variables/font" as f;
+@use "../variables/globalStyles" as gs;
+@use "../variables/breakpoints" as bk;
+
+.aboutContainer {
+  @include gs.backgroundFixed;
+}
+
+.about {
+  width: 25%;
+  height: 100%;
+  padding: s.space(s7) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  @include bk.wide {
+    width: 30%;
+  }
+
+  @include bk.tablet {
+    width: 35%;
+  }
+
+  @include bk.movil {
+    width: 50%;
+    padding: s.space(s6) 0;
+  }
+
+  @include bk.small {
+    width: 60%;
+  }
+
+  @include bk.xsmall {
+    width: 80%;
+  }
+}
+
+.redes {
+  width: 100%;
+  margin-bottom: s.space(s7);
+  display: flex;
+  justify-content: space-around;
+
+  @include bk.movil {
+    margin-bottom: s.space(s6);
+  }
+}
+
+.aboutContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  h1,
+  p {
+    @include gs.contentMargin;
+  }
+
+  p {
+    @include gs.parrafoLineHeight;
+    font-family: f.$sec;
+  }
+}
+
+.aboutImagen {
+  display: block;
+  width: 100%;
+}
+
+.aboutBlack {
+  h1,
+  h2,
+  p {
+    color: c.$black;
+  }
+
+  svg {
+    fill: c.$dark;
+  }
+}
+
+.aboutWhite {
+  h1,
+  h2,
+  h3,
+  p {
+    color: c.$sec;
+  }
+
+  svg {
+    fill: c.$main;
+  }
+}

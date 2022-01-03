@@ -1,0 +1,22 @@
+@use "../variables/color" as c;
+@use "../variables/size" as s;
+@use "../variables/breakpoints" as bk;
+
+.footerContainer {
+  min-width: 280px;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  color: c.$sec;
+  font-size: s.size(small);
+  text-align: center;
+  position: absolute;
+  bottom: 1%;
+
+  @include bk.movil {
+    font-size: s.size(xsmall);
+  }
+}

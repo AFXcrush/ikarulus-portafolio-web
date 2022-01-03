@@ -1,0 +1,28 @@
+@use "../variables/size" as s;
+@use "./breakpoints" as bk;
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Comfortaa:wght@300;700&family=Montserrat:wght@200;400;700&display=swap");
+
+$main: "Comfortaa", cursive;
+$sec: "Montserrat", sans-serif;
+$acent: "Anton", sans-serif;
+
+$weight: (
+  mainMed: 300,
+  mainBold: 700,
+  secLight: 200,
+  secMed: 400,
+  secBold: 700,
+);
+
+@function weight($w) {
+  @return map-get($weight, $w);
+}
+
+@mixin bigTitle {
+  font-size: s.size(bigger);
+  font-weight: weight(mainBold);
+
+  @include bk.small {
+    font-size: s.size(big);
+  }
+}

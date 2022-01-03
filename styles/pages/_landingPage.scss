@@ -1,0 +1,86 @@
+@use "../variables/color" as c;
+@use "../variables/breakpoints" as bk;
+@use "../variables/globalStyles" as gs;
+
+.landingpage {
+  @include gs.backgroundFixed;
+}
+
+.logoHeader {
+  width: 150px;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @include bk.movil {
+    width: 100px;
+  }
+}
+
+.ikarulusLogo {
+  fill: c.$sec;
+  width: 100%;
+}
+
+.logoRubros {
+  width: 75%;
+  height: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 0;
+  grid-template-areas: "log1 log2 log3";
+
+  @include bk.wide {
+    width: 90%;
+    margin: auto;
+  }
+
+  @include bk.movil {
+    height: 80%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    grid-template-areas:
+      ". ."
+      "log1 log2"
+      "log3 log3";
+  }
+}
+
+.logoContainer {
+  justify-self: center;
+  align-self: flex-end;
+}
+
+.logoHome {
+  height: 190px;
+  justify-self: center;
+  align-self: flex-end;
+  fill: c.$sec;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  @include bk.tablet {
+    height: 140px;
+  }
+
+  @include bk.xsmall {
+    height: 110px;
+  }
+}
+
+.ikarusLogo {
+  grid-area: log1;
+}
+.origamiLogo {
+  grid-area: log2;
+}
+.tautoLogo {
+  grid-area: log3;
+}

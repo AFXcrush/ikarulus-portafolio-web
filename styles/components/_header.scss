@@ -1,0 +1,137 @@
+@use "../variables/color" as c;
+@use "../variables/size" as s;
+@use "../variables/font" as f;
+@use "../variables/breakpoints" as bk;
+
+.header {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 8vh;
+  padding: 0 s.space(s6);
+  background-color: c.$dark;
+  color: c.$main;
+
+  @include bk.movil {
+    padding: 0 s.space(s4);
+  }
+}
+
+.headerLogo {
+  width: 150px;
+  fill: c.$main;
+
+  @include bk.tablet {
+    display: none;
+  }
+}
+
+.headerLogoMovil {
+  width: 50px;
+  max-height: 40px;
+  fill: c.$main;
+  display: none;
+
+  @include bk.tablet {
+    display: block;
+  }
+}
+
+.headerIkarulusContainer {
+  width: 150px;
+  display: flex;
+  justify-content: flex-end;
+
+  @include bk.tablet {
+    width: 50px;
+  }
+}
+
+.headerIkarulus {
+  max-width: 100px;
+  display: block;
+
+  &:hover {
+    fill: c.$sec;
+  }
+
+  @include bk.tablet {
+    display: none;
+  }
+}
+
+.headerIkarulusMovil {
+  display: none;
+
+  &:hover {
+    fill: c.$sec;
+  }
+
+  @include bk.tablet {
+    display: block;
+  }
+}
+
+.menuContainer {
+  width: 200px;
+
+  @include bk.small {
+    display: none;
+  }
+}
+
+.headerUl {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLink {
+  font-size: s.size(normal);
+  color: c.$main;
+  font-weight: f.weight(mainBold);
+
+  &:hover {
+    color: c.$sec;
+  }
+}
+
+.menubarContainer {
+  width: 32px;
+  display: none;
+
+  @include bk.small {
+    display: block;
+  }
+}
+
+.menubar {
+  width: 100%;
+  fill: c.$main;
+  cursor: pointer;
+
+  &:hover {
+    fill: c.$sec;
+  }
+}
+
+.menuContainerMovil {
+  width: 100%;
+
+  ul {
+    li {
+      width: 100%;
+      background-color: c.$dark;
+      color: c.$sec;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: s.space(s1);
+      padding: s.space(s3) 0;
+    }
+  }
+}

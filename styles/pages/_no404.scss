@@ -1,0 +1,95 @@
+@use "../variables/color" as c;
+@use "../variables//size" as s;
+@use "../variables/font" as f;
+@use "../variables/breakpoints" as bk;
+
+.no404 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: c.$dark;
+  //   background: linear-gradient(0deg, rgb(74, 79, 97) 60%, rgb(85, 76, 255) 100%);
+}
+
+.comp404 {
+  max-width: 650px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include bk.tablet {
+    width: 60%;
+  }
+
+  @include bk.movil {
+    width: 80%;
+  }
+}
+
+.critterContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.oopsTxt {
+  width: 60%;
+  font-weight: f.weight(mainBold);
+  color: c.$main;
+}
+
+.critter {
+  display: block;
+  width: 40%;
+  fill: c.$main;
+}
+
+.pageNotFound {
+  width: 90%;
+  padding: s.space(s3) s.space(s4);
+  color: c.$sec;
+  background-color: c.$acent-blue;
+  border-radius: s.space(s3);
+  text-align: center;
+  margin: s.space(s4) 0;
+}
+
+.compDescripcion404 {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+
+  @include bk.small {
+    flex-direction: column;
+  }
+}
+
+.descripcion404 {
+  display: flex;
+  flex-direction: column;
+  color: c.$sec;
+}
+
+.p404line1 {
+  font-size: s.size(medium);
+}
+
+.btn404 {
+  background-color: c.$acent-red;
+  color: c.$sec;
+  font-size: s.size(medium);
+  border: none;
+  border-radius: s.space(s2);
+  cursor: pointer;
+  padding: s.space(s2) s.space(s3);
+  text-align: center;
+
+  @include bk.small {
+    margin-top: s.space(s4);
+  }
+}

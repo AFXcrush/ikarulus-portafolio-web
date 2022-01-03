@@ -1,0 +1,25 @@
+@use "../variables/color" as c;
+@use "../variables/breakpoints" as bk;
+
+.redIconLogoContainer {
+  width: 40px;
+
+  @include bk.small {
+    width: 30px;
+  }
+}
+
+.redIconLogo {
+  width: 100%;
+  height: auto;
+
+  svg {
+    width: 100%;
+    display: block;
+
+    &:hover {
+      fill: c.$highlight;
+      transition: 0.3s;
+    }
+  }
+}
