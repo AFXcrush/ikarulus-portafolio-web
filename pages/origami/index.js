@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { ORIGAMI_CLIMAX } from "../../graphql/origamiClimax";
 
@@ -16,8 +17,16 @@ export default function OrigamiIndex({ climax }) {
   return (
     <Layout title={"Origami"}>
       <Header
-        pageLogo={<OrigamiLogo className={styles.headerLogo} />}
-        pageLogoMovil={<OrigamiLogoMovil className={styles.headerLogoMovil} />}
+        pageLogo={
+          <Link href={"/origami"}>
+            <OrigamiLogo className={styles.headerLogo} />
+          </Link>
+        }
+        pageLogoMovil={
+          <Link href={"/origami"}>
+            <OrigamiLogoMovil className={styles.headerLogoMovil} />
+          </Link>
+        }
         toFeed={"/origami/gallery"}
         toAbout={"/origami/about"}
       />
