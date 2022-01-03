@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { ORIGAMI_GALLERY } from "../../graphql/origamiGallery";
 
@@ -15,9 +16,23 @@ export default function OrigamiGallery({ gallery }) {
     <Layout title={"Origami"}>
       <div className={styles.galleryPage}>
         <Header
-          pageLogo={<OrigamiLogo className={styles.headerLogo} />}
+          pageLogo={
+            <div className={styles.headerLogo}>
+              <Link href={"/origami"}>
+                <a>
+                  <OrigamiLogo className={styles.headerLogo} />
+                </a>
+              </Link>
+            </div>
+          }
           pageLogoMovil={
-            <OrigamiLogoMovil className={styles.headerLogoMovil} />
+            <div className={styles.headerLogoMovil}>
+              <Link href={"/origami"}>
+                <a>
+                  <OrigamiLogoMovil className={styles.headerLogoMovil} />
+                </a>
+              </Link>
+            </div>
           }
           toFeed={"/origami/gallery"}
           toAbout={"/origami/about"}

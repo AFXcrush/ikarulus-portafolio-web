@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import Layout from "../../components/Layout";
 import Header from "../../components/Header";
@@ -23,9 +24,23 @@ export default function TautoAbout({ about }) {
           />
         </div>
         <Header
-          pageLogo={<OrigamiLogo className={styles.headerLogo} />}
+          pageLogo={
+            <div className={styles.headerLogo}>
+              <Link href={"/origami"}>
+                <a>
+                  <OrigamiLogo className={styles.headerLogo} />
+                </a>
+              </Link>
+            </div>
+          }
           pageLogoMovil={
-            <OrigamiLogoMovil className={styles.headerLogoMovil} />
+            <div className={styles.headerLogoMovil}>
+              <Link href={"/origami"}>
+                <a>
+                  <OrigamiLogoMovil className={styles.headerLogoMovil} />
+                </a>
+              </Link>
+            </div>
           }
           toFeed={"/origami/gallery"}
           toAbout={"/origami/about"}

@@ -18,14 +18,22 @@ export default function OrigamiIndex({ climax }) {
     <Layout title={"Origami"}>
       <Header
         pageLogo={
-          <Link href={"/origami"}>
-            <OrigamiLogo className={styles.headerLogo} />
-          </Link>
+          <div className={styles.headerLogo}>
+            <Link href={"/origami"}>
+              <a>
+                <OrigamiLogo className={styles.headerLogo} />
+              </a>
+            </Link>
+          </div>
         }
         pageLogoMovil={
-          <Link href={"/origami"}>
-            <OrigamiLogoMovil className={styles.headerLogoMovil} />
-          </Link>
+          <div className={styles.headerLogoMovil}>
+            <Link href={"/origami"}>
+              <a>
+                <OrigamiLogoMovil className={styles.headerLogoMovil} />
+              </a>
+            </Link>
+          </div>
         }
         toFeed={"/origami/gallery"}
         toAbout={"/origami/about"}
