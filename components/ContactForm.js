@@ -13,7 +13,7 @@ export default function ContactForm() {
 
     emailjs
       .sendForm(
-        process.env.EMAIL_SERVICE,
+        "gmail",
         process.env.EMAIL_TEMPLATE,
         form.current,
         process.env.EMAIL_USER
