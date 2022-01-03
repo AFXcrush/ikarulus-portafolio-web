@@ -9,7 +9,7 @@ import styles from "../styles/Home.module.css";
 
 export default function AboutTemplate({ redes, contenido, style }) {
   const replaceSlashForEnter = (string) => {
-    return string.replaceAll("\n", "<br></br>");
+    return string.replace(/\n/g, "<br></br>");
   };
 
   return (

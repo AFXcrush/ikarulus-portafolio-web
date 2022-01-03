@@ -29,7 +29,7 @@ export default function GalleryTemplate({ gallery }) {
   };
 
   const replaceSlashForEnter = (string) => {
-    return string.replaceAll("\n", "<br></br>");
+    return string.replace(/\n/g, "<br></br>");
   };
 
   return (
