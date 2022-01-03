@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 import styles from "../styles/Home.module.css";
 
