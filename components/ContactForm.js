@@ -16,7 +16,7 @@ export default function ContactForm() {
         process.env.EMAIL_SERVICE,
         process.env.EMAIL_TEMPLATE,
         form.current,
-        process.env.EMAIL_USER
+        "user_LwaXO3UVx9iSwtIUC9xY9"
       )
       .then(
         (result) => {
