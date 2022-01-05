@@ -24,6 +24,7 @@ export default function ContactForm() {
         },
         (error) => {
           console.log(error.text);
+          alert("Hubo un error");
         }
       );
     e.target.reset();
