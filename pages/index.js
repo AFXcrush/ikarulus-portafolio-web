@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Particles from "react-tsparticles";
 import classNames from "classnames";
+import { motion } from "framer-motion";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { LANDING_PAGE } from "../graphql/landingPage";
 
@@ -98,21 +99,51 @@ export default function Home({ landingPage }) {
 
         <section className={styles.logoRubros}>
           <Link href="/ikarus">
-            <a className={classNames(styles.logoContainer, styles.ikarusLogo)}>
+            <motion.a
+              className={classNames(styles.logoContainer, styles.ikarusLogo)}
+              initial={{ x: "-100vw" }}
+              animate={{ x: 0 }}
+              transition={{
+                delay: 0.35,
+                duration: 0.3,
+                type: "spring",
+                stiffness: 120,
+              }}
+            >
               <IkarusLogo className={styles.logoHome} />
-            </a>
+            </motion.a>
           </Link>
 
           <Link href="/origami">
-            <a className={classNames(styles.logoContainer, styles.origamiLogo)}>
+            <motion.a
+              className={classNames(styles.logoContainer, styles.origamiLogo)}
+              initial={{ x: "-100vw" }}
+              animate={{ x: 0 }}
+              transition={{
+                delay: 0.25,
+                duration: 0.3,
+                type: "spring",
+                stiffness: 120,
+              }}
+            >
               <OrigamiLogo className={styles.logoHome} />
-            </a>
+            </motion.a>
           </Link>
 
           <Link href="/tauto">
-            <a className={classNames(styles.logoContainer, styles.tautoLogo)}>
+            <motion.a
+              className={classNames(styles.logoContainer, styles.tautoLogo)}
+              initial={{ x: "-100vw" }}
+              animate={{ x: 0 }}
+              transition={{
+                delay: 0.15,
+                duration: 0.3,
+                type: "spring",
+                stiffness: 120,
+              }}
+            >
               <TautoLogo className={styles.logoHome} />
-            </a>
+            </motion.a>
           </Link>
         </section>
 

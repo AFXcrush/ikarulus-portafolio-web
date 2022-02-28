@@ -11,7 +11,7 @@ import OrigamiLogoMovil from "../../assets/svg/Origami-logo-movil.svg";
 
 import styles from "../../styles/Home.module.css";
 
-export default function TautoAbout({ about }) {
+export default function OrigamiAbout({ about }) {
   return (
     <Layout title={"Origami"}>
       <div className={styles.aboutContainer}>
